@@ -140,7 +140,7 @@ export const loginUser = async (req, res) => {
   const { email, contrasena } = req.body;
 
   try {
-    const [resultado] = await pool.query("SELECT * FROM Usuarios WHERE email = ? AND contrasena = ?", [email, contrasena]);
+    const [resultado] = await pool.query("SELECT * FROM usuarios WHERE email = ? AND contrasena = ?", [email, contrasena]);
     const usuario = resultado[0];
 
     if (!usuario) {
